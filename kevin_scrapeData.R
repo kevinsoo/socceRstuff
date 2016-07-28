@@ -17,8 +17,6 @@ for (i in 1:11) {
     }
 }
 
-head(standard.df)
-
 # this code scrapes the table for control stats (11 pages)
 for (i in 1:11) {
     fox <- paste("http://www.foxsports.com/soccer/stats?competition=1&season=20150&category=CONTROL&pos=0&team=0&isOpp=0&splitType=0&sort=4&sortOrder=0&page=", i, sep="")
@@ -31,7 +29,12 @@ for (i in 1:11) {
     }
 }
 
-head(control.df)
+#### combine and clean data
+# rename columns
+colnames(standard.df) <- c("Standard", "GP", "GS", "MP", "Goals", "Assists", "ShotsOnGoal", "Shots", "YC", "RC")
+colnames(control.df) <- c("Control", "GP", "GS", "MP", "Touches", "Passes", "Interceptions", "Blocks", "GoalmouthBlocks", "Tackles", "Offside", "Crosses", "CornerKicks")
 
+# save data frames
 save(standard.df, file="StandardStats_PremLeague1516.Rda")
 save(control.df, file="ControlStats_PremLeague1516.Rda")
+
