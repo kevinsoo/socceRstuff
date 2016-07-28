@@ -35,6 +35,8 @@ for (i in 1:11) {
 colnames(standard.df) <- c("Standard", "GP", "GS", "MP", "Goals", "Assists", "ShotsOnGoal", "Shots", "YC", "RC")
 colnames(control.df) <- c("Control", "GP", "GS", "MP", "Touches", "Passes", "Interceptions", "Blocks", "GoalmouthBlocks", "Tackles", "Offside", "Crosses", "CornerKicks")
 
+standard.df$Club <- str_sub(standard.df$Control, str_length(standard.df$Control)-2, str_length(standard.df$Control))
+
 standard.df$Name <- str_replace_all(standard.df$Standard, "\n" , " ")
 standard.df$Name <- str_replace_all(standard.df$Name, "\r" , "")
 standard.df$Name <- str_replace_all(standard.df$Name, "\t" , "")
