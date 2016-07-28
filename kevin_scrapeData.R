@@ -3,6 +3,7 @@ library(XML)
 library(dplyr)
 library(tidyr)
 library(ggplot2)
+library(stringr)
 theme_set(theme_bw())
 
 # this code scrapes the table for standard stats (11 pages)
@@ -33,6 +34,10 @@ for (i in 1:11) {
 # rename columns
 colnames(standard.df) <- c("Standard", "GP", "GS", "MP", "Goals", "Assists", "ShotsOnGoal", "Shots", "YC", "RC")
 colnames(control.df) <- c("Control", "GP", "GS", "MP", "Touches", "Passes", "Interceptions", "Blocks", "GoalmouthBlocks", "Tackles", "Offside", "Crosses", "CornerKicks")
+
+standard.df$Name <- str_replace_all(standard.df$Standard, "\n" , " ")
+standard.df$Name <- str_replace_all(standard.df$Name, "\r" , "")
+standard.df$Name <- str_replace_all(standard.df$Name, "\t" , "")
 
 # save data frames
 save(standard.df, file="StandardStats_PremLeague1516.Rda")
