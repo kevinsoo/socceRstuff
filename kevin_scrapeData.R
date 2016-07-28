@@ -32,3 +32,6 @@ for (i in 1:11) {
 }
 
 head(control.df)
+
+save(standard.df, file="StandardStats_PremLeague1516.Rda")
+save(control.df, file="ControlStats_PremLeague1516.Rda")
