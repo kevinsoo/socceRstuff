@@ -1,3 +1,8 @@
+##########################################################
+# This computes team-level data from the player-level data
+# Author: Kevin Soo
+##########################################################
+
 # load packages
 library(dplyr)
 

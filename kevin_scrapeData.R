@@ -1,3 +1,8 @@
+##################################################
+# This scrapes individual level data and cleans it
+# Author: Kevin Soo
+##################################################
+
 # load packages
 library(XML)
 library(dplyr)
