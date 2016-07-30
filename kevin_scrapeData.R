@@ -181,4 +181,5 @@ df.PL$CornerKicks <- as.numeric(df.PL$CornerKicks)
 # save data frames
 save(df.standard, file="StandardStats_PremLeague1516.Rda")
 save(df.control, file="ControlStats_PremLeague1516.Rda")
-save(df.PL, file="AllData_PremLeague1516.Rda")
+df.players <- df.PL # rename df
+save(df.players, file="players_PremLeague1516.Rda")
