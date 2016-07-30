@@ -7,3 +7,5 @@ I recommend just starting with the complete .Rda file. To load data:
 ```R
 load("AllData_PremLeague1516.Rda")
 ```
+
+I'm on the lookout for more soccer-related data sets, particularly time series data.
